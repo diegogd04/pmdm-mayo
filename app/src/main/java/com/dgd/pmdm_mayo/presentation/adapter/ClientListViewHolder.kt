@@ -14,6 +14,9 @@ class ClientListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             dni.text = item.dni
             name.text = item.name
             email.text = item.email
+            delete.setOnClickListener {
+
+            }
         }
     }
 }
