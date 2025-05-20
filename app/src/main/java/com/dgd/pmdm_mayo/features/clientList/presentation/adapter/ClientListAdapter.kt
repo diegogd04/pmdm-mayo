@@ -1,14 +1,14 @@
-package com.dgd.pmdm_mayo.presentation.adapter
+package com.dgd.pmdm_mayo.features.clientList.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.dgd.pmdm_mayo.R
-import com.dgd.pmdm_mayo.domain.Client
+import com.dgd.pmdm_mayo.features.clientList.domain.Client
 
 class ClientListAdapter(
     private val onDeleteClick: (Client) -> Unit
-) : ListAdapter<Client, ClientListViewHolder>(ClientListDiffUtil()) {
+) : ListAdapter<Client, ClientListViewHolder>(com.dgd.pmdm_mayo.features.clientList.presentation.adapter.ClientListDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientListViewHolder {
         val view = LayoutInflater.from(parent.context)

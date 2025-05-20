@@ -3,4 +3,5 @@
 
     <string name="toolbar_title">SAP</string>
     <string name="client_list_title">Client List</string>
+    <string name="client_form_title">Client Form</string>
 </resources>

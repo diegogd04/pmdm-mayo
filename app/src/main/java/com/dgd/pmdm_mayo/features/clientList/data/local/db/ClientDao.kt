@@ -1,4 +1,4 @@
-package com.dgd.pmdm_mayo.data.local.db
+package com.dgd.pmdm_mayo.features.clientList.data.local.db
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -16,6 +16,9 @@ interface ClientDao {
 
     @Insert
     fun insertAll(vararg clients: ClientEntity)
+
+    @Insert
+    fun insert(client: ClientEntity)
 
     @Delete
     fun delete(client: ClientEntity)

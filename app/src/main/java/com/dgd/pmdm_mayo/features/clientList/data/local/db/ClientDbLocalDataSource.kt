@@ -1,7 +1,7 @@
-package com.dgd.pmdm_mayo.data.local.db
+package com.dgd.pmdm_mayo.features.clientList.data.local.db
 
 import com.dgd.pmdm_mayo.app.db.PmdmDatabase
-import com.dgd.pmdm_mayo.domain.Client
+import com.dgd.pmdm_mayo.features.clientList.domain.Client
 import org.koin.core.annotation.Single
 
 @Single
@@ -17,5 +17,9 @@ class ClientDbLocalDataSource(private val db: PmdmDatabase) {
 
     fun saveClientList(clientList: List<Client>) {
         db.clientDao().insertAll(*clientList.map { it.toEntity() }.toTypedArray())
+    }
+
+    fun saveClient(client: Client) {
+        db.clientDao().insert(client.toEntity())
     }
 }
