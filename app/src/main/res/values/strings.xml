@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">pmdm-mayo</string>
+
+    <string name="toolbar_title">SAP</string>
 </resources>
