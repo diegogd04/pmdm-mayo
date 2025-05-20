@@ -25,8 +25,12 @@ class ClientListViewModel(
     fun loadClientList() {
         _uiState.postValue(UiState(isLoading = true))
         viewModelScope.launch(Dispatchers.IO) {
-            val clientList = getClientListUseCase()
-            _uiState.postValue(UiState(clientList = clientList))
+            try {
+                val clientList = getClientListUseCase()
+                _uiState.postValue(UiState(clientList = clientList))
+            } catch (e: Exception) {
+                _uiState.postValue(UiState(error = e.toString()))
+            }
         }
     }
 

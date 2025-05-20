@@ -1,6 +1,7 @@
 package com.dgd.pmdm_mayo.presentation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,7 +51,16 @@ class ClientListFragment : Fragment() {
 
     private fun setUpObserver() {
         val observer = Observer<ClientListViewModel.UiState> { uiState ->
-            bindData(uiState.clientList)
+            if (uiState.isLoading) {
+                Log.d("@dev", "Cargando...")
+            } else {
+                Log.d("@dev", "Cargado")
+            }
+            if (uiState.error != null) {
+                Log.d("@dev", uiState.error)
+            } else {
+                bindData(uiState.clientList)
+            }
         }
 
         viewModel.uiState.observe(viewLifecycleOwner, observer)
