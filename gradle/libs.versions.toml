@@ -28,6 +28,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 
 room = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomVersion" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navVersion" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navVersion" }
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koinAndroidVerion" }

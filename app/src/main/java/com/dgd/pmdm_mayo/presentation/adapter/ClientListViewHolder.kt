@@ -5,7 +5,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dgd.pmdm_mayo.databinding.ViewClientItemBinding
 import com.dgd.pmdm_mayo.domain.Client
 
-class ClientListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class ClientListViewHolder(
+    view: View,
+    private val onClickDelete: (Client) -> Unit
+) : RecyclerView.ViewHolder(view) {
 
     private val binding = ViewClientItemBinding.bind(view)
 
@@ -15,7 +18,7 @@ class ClientListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             name.text = item.name
             email.text = item.email
             delete.setOnClickListener {
-
+                onClickDelete(item)
             }
         }
     }

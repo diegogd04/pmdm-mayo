@@ -6,13 +6,15 @@ import androidx.recyclerview.widget.ListAdapter
 import com.dgd.pmdm_mayo.R
 import com.dgd.pmdm_mayo.domain.Client
 
-class ClientListAdapter : ListAdapter<Client, ClientListViewHolder>(ClientListDiffUtil()) {
+class ClientListAdapter(
+    private val onDeleteClick: (Client) -> Unit
+) : ListAdapter<Client, ClientListViewHolder>(ClientListDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientListViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.view_client_item, parent, false)
 
-        return ClientListViewHolder(view)
+        return ClientListViewHolder(view, onDeleteClick)
     }
 
     override fun getItemCount(): Int {

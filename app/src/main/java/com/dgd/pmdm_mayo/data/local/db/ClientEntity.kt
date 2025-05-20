@@ -1,10 +1,10 @@
-package com.dgd.pmdm_mayo.data.local
+package com.dgd.pmdm_mayo.data.local.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "clients")
 data class ClientEntity(
 
     @PrimaryKey @ColumnInfo(name = "dni") val dni: String,

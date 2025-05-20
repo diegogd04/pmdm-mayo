@@ -4,4 +4,5 @@ interface ClientRepository {
 
     suspend fun getClientList(): List<Client>
     suspend fun deleteClient(client: Client)
+    suspend fun saveClientList(clientList: List<Client>)
 }
