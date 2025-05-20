@@ -1,4 +1,4 @@
-package com.dgd.pmdm_mayo.data.local.db
+package com.dgd.pmdm_mayo.features.clientList.data.local.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

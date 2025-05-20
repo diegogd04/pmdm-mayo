@@ -1,4 +1,4 @@
-package com.dgd.pmdm_mayo.presentation.adapter
+package com.dgd.pmdm_mayo.features.clientList.presentation.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.dgd.pmdm_mayo.presentation
+package com.dgd.pmdm_mayo.features.clientList.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

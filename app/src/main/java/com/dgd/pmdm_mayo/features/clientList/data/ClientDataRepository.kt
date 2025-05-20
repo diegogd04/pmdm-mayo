@@ -1,4 +1,4 @@
-package com.dgd.pmdm_mayo.data
+package com.dgd.pmdm_mayo.features.clientList.data
 
 import com.dgd.pmdm_mayo.data.local.db.ClientDbLocalDataSource
 import com.dgd.pmdm_mayo.domain.Client

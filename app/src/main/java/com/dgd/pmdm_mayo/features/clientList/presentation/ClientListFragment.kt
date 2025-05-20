@@ -1,4 +1,4 @@
-package com.dgd.pmdm_mayo.presentation
+package com.dgd.pmdm_mayo.features.clientList.presentation
 
 import android.os.Bundle
 import android.util.Log
@@ -17,7 +17,7 @@ class ClientListFragment : Fragment() {
 
     private var _binding: FragmentClientListBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: ClientListViewModel by viewModel()
+    private val viewModel: com.dgd.pmdm_mayo.features.clientList.presentation.ClientListViewModel by viewModel()
     private lateinit var clientListAdapter: ClientListAdapter
 
     override fun onCreateView(
@@ -50,7 +50,8 @@ class ClientListFragment : Fragment() {
     }
 
     private fun setUpObserver() {
-        val observer = Observer<ClientListViewModel.UiState> { uiState ->
+        val observer =
+            Observer<com.dgd.pmdm_mayo.features.clientList.presentation.ClientListViewModel.UiState> { uiState ->
             if (uiState.isLoading) {
                 Log.d("@dev", "Cargando...")
             } else {
