@@ -17,6 +17,9 @@ interface ClientDao {
     @Insert
     fun insertAll(vararg clients: ClientEntity)
 
+    @Insert
+    fun insert(client: ClientEntity)
+
     @Delete
     fun delete(client: ClientEntity)
 }

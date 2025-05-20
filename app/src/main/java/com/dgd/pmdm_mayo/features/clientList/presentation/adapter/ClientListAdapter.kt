@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.dgd.pmdm_mayo.R
-import com.dgd.pmdm_mayo.domain.Client
+import com.dgd.pmdm_mayo.features.clientList.domain.Client
 
 class ClientListAdapter(
     private val onDeleteClick: (Client) -> Unit

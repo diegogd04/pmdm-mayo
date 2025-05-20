@@ -1,7 +1,7 @@
 package com.dgd.pmdm_mayo.features.clientList.presentation.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.dgd.pmdm_mayo.domain.Client
+import com.dgd.pmdm_mayo.features.clientList.domain.Client
 
 class ClientListDiffUtil : DiffUtil.ItemCallback<Client>() {
 

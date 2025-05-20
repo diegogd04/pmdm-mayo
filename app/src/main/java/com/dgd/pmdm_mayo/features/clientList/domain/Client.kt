@@ -4,7 +4,7 @@ import org.koin.core.annotation.Single
 
 @Single
 data class Client(
-    val dni: String,
-    val name: String,
-    val email: String
+    var dni: String,
+    var name: String,
+    var email: String
 )

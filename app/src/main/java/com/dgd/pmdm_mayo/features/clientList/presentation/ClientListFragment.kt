@@ -7,17 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dgd.pmdm_mayo.R
 import com.dgd.pmdm_mayo.databinding.FragmentClientListBinding
-import com.dgd.pmdm_mayo.domain.Client
-import com.dgd.pmdm_mayo.presentation.adapter.ClientListAdapter
+import com.dgd.pmdm_mayo.features.clientList.domain.Client
+import com.dgd.pmdm_mayo.features.clientList.presentation.adapter.ClientListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ClientListFragment : Fragment() {
 
     private var _binding: FragmentClientListBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: com.dgd.pmdm_mayo.features.clientList.presentation.ClientListViewModel by viewModel()
+    private val viewModel: ClientListViewModel by viewModel()
     private lateinit var clientListAdapter: ClientListAdapter
 
     override fun onCreateView(
@@ -32,6 +34,9 @@ class ClientListFragment : Fragment() {
 
     private fun setUpView() {
         binding.apply {
+            toolbar.buttonAdd.setOnClickListener {
+                findNavController().navigate(R.id.action_from_client_list_fragment_to_client_form_fragment)
+            }
             clientList.apply {
                 layoutManager = LinearLayoutManager(requireContext())
                 clientListAdapter = ClientListAdapter { client ->
@@ -51,7 +56,7 @@ class ClientListFragment : Fragment() {
 
     private fun setUpObserver() {
         val observer =
-            Observer<com.dgd.pmdm_mayo.features.clientList.presentation.ClientListViewModel.UiState> { uiState ->
+            Observer<ClientListViewModel.UiState> { uiState ->
             if (uiState.isLoading) {
                 Log.d("@dev", "Cargando...")
             } else {

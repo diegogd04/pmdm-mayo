@@ -3,7 +3,7 @@ package com.dgd.pmdm_mayo.features.clientList.presentation.adapter
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.dgd.pmdm_mayo.databinding.ViewClientItemBinding
-import com.dgd.pmdm_mayo.domain.Client
+import com.dgd.pmdm_mayo.features.clientList.domain.Client
 
 class ClientListViewHolder(
     view: View,
