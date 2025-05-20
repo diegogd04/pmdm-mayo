@@ -1,19 +1,17 @@
 package com.dgd.pmdm_mayo.data.local
 
-import android.content.Context
-import androidx.room.Room
-import com.dgd.pmdm_mayo.app.PmdmDatabase
+import com.dgd.pmdm_mayo.app.db.PmdmDatabase
 import com.dgd.pmdm_mayo.domain.Client
+import org.koin.core.annotation.Single
 
-class ClientDbLocalDataSource(private val context: Context) {
-
-    private val db = Room.databaseBuilder(
-        context,
-        PmdmDatabase::class.java,
-        "pmdm-database"
-    ).build()
+@Single
+class ClientDbLocalDataSource(private val db: PmdmDatabase) {
 
     fun getClientList(): List<Client> {
         return db.clientDao().getAll()
+    }
+
+    fun deleteClient(client: Client) {
+        db.clientDao().delete(client)
     }
 }

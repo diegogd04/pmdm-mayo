@@ -1,4 +1,4 @@
-package com.dgd.pmdm_mayo.app
+package com.dgd.pmdm_mayo.app.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
